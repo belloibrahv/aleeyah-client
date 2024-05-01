@@ -40,11 +40,11 @@ const ChatBot = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:8000/recipes/generate",
+        "https://aleeyah.onrender.com/recipes/generate",
         {
           history: chatHistory.map((item) => item.parts),
           message: inputValue,
-        },
+        }
       );
 
       setChatHistory([
@@ -102,7 +102,7 @@ const ChatBot = () => {
                 <div
                   onClick={() =>
                     setInputValue(
-                      "I have some ingredients what can make out of it",
+                      "I have some ingredients what can make out of it"
                     )
                   }
                   className="p-4 md:p-8 rounded-lg h-[150px] md:h-[200px] cursor-pointer border-transparent transition-colors hover:border-[2.5px] hover:border-primarycolor bg-gray-50"
@@ -115,7 +115,7 @@ const ChatBot = () => {
                 <div
                   onClick={() =>
                     setInputValue(
-                      "Come up with a meal plan and grocery list for the week for me",
+                      "Come up with a meal plan and grocery list for the week for me"
                     )
                   }
                   className="md:p-8 p-4 rounded-lg h-[150px] md:h-[200px] cursor-pointer hover:border-[2.5px] hover:border-primarycolor bg-gray-50"
@@ -128,7 +128,7 @@ const ChatBot = () => {
                 <div
                   onClick={() =>
                     setInputValue(
-                      "Substitute the ingredients recipe for a food",
+                      "Substitute the ingredients recipe for a food"
                     )
                   }
                   className="p-4 md:p-8 rounded-lg h-[150px] md:h-[200px] cursor-pointer hover:border-[2.5px] hover:border-primarycolor bg-gray-50"
@@ -140,7 +140,7 @@ const ChatBot = () => {
                 <div
                   onClick={() =>
                     setInputValue(
-                      "I have been having a funny feeling since i ate, why could that be?",
+                      "I have been having a funny feeling since i ate, why could that be?"
                     )
                   }
                   className="md:p-8 p-4 rounded-lg h-[150px] md:h-[200px] cursor-pointer hover:border-[2.5px] hover:border-primarycolor bg-gray-50"
@@ -197,7 +197,9 @@ const ChatBot = () => {
             {chatHistory.map((item, index) => (
               <div
                 key={index}
-                className={`flex ${item.role === "user" ? "justify-start" : "justify-start"} mb-2`}
+                className={`flex ${
+                  item.role === "user" ? "justify-start" : "justify-start"
+                } mb-2`}
               >
                 {item.role === "user" ? (
                   // Render user message

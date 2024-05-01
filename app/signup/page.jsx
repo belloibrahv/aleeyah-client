@@ -30,8 +30,8 @@ export default function SignUp() {
     setloading(true);
     try {
       const response = await axios.post(
-        "http://localhost:8000/auth/register",
-        formData,
+        "https://aleeyah.onrender.com/auth/register",
+        formData
       );
       console.log(response.data.message);
 
